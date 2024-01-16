@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} pagina principal {% endblock %}
+
+{% block content %}
+<div class = "offset-1 col-10 list-div">
+    <h1>Lista de Tarefas</h1>
+    <a id="add-link" href="newtask/">
+        <div class="col-2 add-div">
+            <i class="fas fa-plus"></i> Adicionar>
+        </a>
+        </div
+        <div class="col-9 search-div">
+            <input class="form-control"  type="text" id="search" nome="search" placeholder="Pesquise a Tarefa">
+            <i class="fas fa-search"></i>
+        </div>
+        <ul calss="task-list" >
+            {% for task in tasks %}
+            <li class="task-item">
+                <span> <a href='/task/{{task.id}}'>{{task.title}} </a></span>
+                <spam><i class=" fas fa-trash" ></i></spam>
+                <spam><i class=" fas fa-edit" ></i></spam>
+            </li>
+            {% endfor %}
+        </ul>
+</div>
+{% endblock %}
